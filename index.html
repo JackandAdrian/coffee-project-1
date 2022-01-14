@@ -18,17 +18,21 @@
 <body>
 
     <div class="container">
-        <div class="row ">
-            <h1 style="text-align: center">Coffee!</h1>
-            <hr>
+        <div class="headline">
+            <h1 style="text-align: center; color: gainsboro" class="title p-5">Coffee!</h1>
+        </div>
+        <hr> <!-- moved div and hr out of row to separate from content body-->
 
+        <div class="row">
             <!--Coffee names and roast type being added from javascript file-->
             <div class="col-6">
-                <div id="coffees"></div>
+                <div id="coffees" class="row"> <!-- added class row to make two columns for rendered coffees-->
+                <!-- coffees render from JS here-->
+                </div>
             </div>
 
             <!--Roast selection and user text-input container-->
-            <div class="col-6">
+            <div class="col-md-6">
                 <form>
                     <label for="roast-selection"><h5>Roast</h5></label>
                     <select class="roast-option form-select mb-3" id="roast-selection">
@@ -42,7 +46,7 @@
                            type="text"
                            id="search"
                            placeholder="Enter Coffee Name...">
-                    <button type="submit" class="col-12 mb-2 btn btn-primary btn-lg btn-block " id="submit" >Submit</button>
+                    <button type="submit" class="col-12 mb-2 btn btn-primary btn-lg btn-block shadow" id="submit" >Submit</button>
                 </form>
                 <hr>
 
@@ -50,7 +54,7 @@
                 <h2 class="mt-4" style="text-align:center">Add a Coffee</h2>
                 <form>
                     <label for="roast-selection"><h5>Roast</h5></label>
-                    <select class="roast-selection form-select mb-3">
+                    <select id="new-roast-selection" class="roast-selection form-select mb-3">
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
@@ -58,8 +62,8 @@
                     <label for="roast-selection"><h5>Name</h5></label>
                     <input class="col-12 mb-3 form-control"
                            type="text"
-                           id="">
-                    <button type="submit" class="col-12 mb-2 btn btn-primary btn-lg btn-block">Submit</button>
+                           id="Entry">
+                    <button id="addition" type="submit" class="col-12 mb-2 btn btn-primary btn-lg btn-block shadow">Submit</button>
                 </form>
 
             </div> <!-- column end-->
