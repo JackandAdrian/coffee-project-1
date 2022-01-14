@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = `<div class="coffee">`;
-    html += '<p>' + coffee.id + '</p>';
+    html += '<p class="d-none">' + coffee.id + '</p>';
     html += '<h1>' + coffee.name + '</h1>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
@@ -10,7 +10,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
-// Loop from last element to fight then add to html file.
+// Loop from last element to first then add to html file.
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
@@ -30,6 +30,7 @@ function updateCoffees(e) {
 
 // Store querySelector for " #roast-selection " = (User's drop Menu selection's input(light, medium, dark)) with " .value "....
     var selectedRoast = roastSelection.value;
+
 // Cycle Through each element in coffees Array, Assigned coffee parameter inside the function ....
     coffees.forEach(function (coffee) {
 // ...and search for type of (selectedRoast) through <p> tag ( light , medium, dark) from (coffee.roast)
@@ -53,15 +54,6 @@ roastSelection.addEventListener("change", updateCoffees);
 // ASSIGN VARIABLE TO THE LIST OF ALL COFFEES IN COFFEE ARRAY
 var tbody = document.querySelector('#coffees');
 
-// roastSelection.addEventListener("change", function(event) {   <---- ????
-//          var roastedOption = event.option.value;
-//           updateCoffees(roastedOption);
-
-
-
-
-
-
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -84,10 +76,27 @@ var coffees = [
 var submitButton = document.querySelector('#submit');
 
 
-
 //Since renderCoffee writes to page from last to first, add .reverse() to sort the "id".
 // write to the file at the end of the function.
 tbody.innerHTML = renderCoffees(coffees.reverse());
+
+
+// Following is to filter the coffee names in response to user input to search bar...
+var coffeeInput = document.getElementById("search");
+
+coffeeInput.addEventListener('keyup', function () {
+    var search = coffeeInput.value; //this stores the called coffeeInput variable's contents
+
+    // the following stores the filtered coffees array and returns the coffee by name or roast array values
+    var searchFilter = coffees.filter(coffee => {
+        return coffee.name.includes(search) || coffee.roast.includes(search);
+    }); //
+
+    // var searchFilter = coffees.filter(function (coffee) {
+    //     return coffee.name.includes(search) || coffee.roast.includes(search);
+    // }) <--- same function but in standard form.
+    tbody.innerHTML = renderCoffees(searchFilter);
+})
 
 
 submitButton.addEventListener('change', updateCoffees);
