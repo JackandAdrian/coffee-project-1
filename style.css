@@ -7,3 +7,12 @@
 /*    border: 1px solid black;*/
 /*    padding: 5px 10px;*/
 /*}*/
+
+.headline {
+    height: 200px;
+    opacity: 0.90;
+    background-image: url("https://www.cafevertical.com/wp-content/uploads/2017/01/Team-title-area-parallax-img-2.jpg");
+    background-position: top;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
