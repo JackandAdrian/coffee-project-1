@@ -15,30 +15,31 @@
     <!--    Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Antonio&family=Comforter+Brush&family=Great+Vibes&family=Lobster&family=Monoton&family=Montserrat:wght@100&family=Neonderthaw&family=Pacifico&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Antonio&family=Comforter+Brush&family=Great+Vibes&family=Lobster&family=Monoton&family=Montserrat:wght@100&family=Neonderthaw&family=Pacifico&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
 
     <title>Coffee Project</title>
 </head>
 
 <body>
+<!-- Coffee header-->
+<div class="headline p-5">
+    <h1 style="text-align: center; color: gainsboro" class="title">
+        <span>C</span>
+        <span>o</span>
+        <span>f</span>
+        <span>f</span>
+        <span>e</span>
+        <span>e</span>
+    </h1>
+</div>
 
-    <div class="container shadow-lg p-2 mb-5 bg-white rounded">
-        <div class="headline p-5 mb-4 bg-light rounded-3">
-            <h1 style="text-align: center; color: gainsboro" class="title">
-                <span>C</span>
-                <span>o</span>
-                <span>f</span>
-                <span>f</span>
-                <span>e</span>
-                <span>e</span>
-            </h1>
-        </div>
-        <hr> <!-- moved div and hr out of row to separate from content body-->
+<!-- Main section-->
+<section class="section section-light p-4">
+    <div class="container shadow-lg mb-2 bg-white rounded">
 
-        <div class="row">
-            <!--Coffee names and roast type being added from javascript file-->
+        <div class="row p-2 rounded-3">
             <div class="col-6">
-                <div id="coffees" class="row"> <!-- added class row to make two columns for rendered coffees-->
+                <div id="coffees" class="row">
                 <!-- coffees render from JS here-->
                 </div>
             </div>
@@ -75,14 +76,15 @@
                     <label for="roast-selection"><h5>Name</h5></label>
                     <input class="col-12 mb-3 form-control"
                            type="text"
-                           id="submitCoffee">
+                           id="submitCoffee"
+                           placeholder="Enter Coffee Name...">
                     <button id="submitNew" type="submit" class="col-12 mb-2 btn btn-primary btn-lg btn-block shadow" value="submit">Submit</button>
                 </form>
 
             </div> <!-- column end-->
         </div> <!-- Row End-->
     </div> <!-- CONTAINER END-->
-
+</section>
 
 
 
