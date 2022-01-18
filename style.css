@@ -7,25 +7,54 @@
 /*    border: 1px solid black;*/
 /*    padding: 5px 10px;*/
 /*}*/
+
+body, html{
+    height: 100%;
+    margin: 0;
+    font-size: 1em;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.section{
+    padding: 50px 80px;
+}
+
+.section-light{
+    background-color: #f4f4f4;
+    color: #666;
+}
+
 .headline {
-    height: 200px;
-    opacity: 0.90;
+    position: relative;
+    height: 300px;
+    opacity: 90%;
     background-image: url("https://www.cafevertical.com/wp-content/uploads/2017/01/Team-title-area-parallax-img-2.jpg");
     background-position: top;
-    background-repeat:no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.row {
+    background-color: #d4e9e2;
+}
+
 /*--------------------Animated Logo---------------------------*/
 .title {
     font-size: 100px;
-    font-family: comforter brush;
+    font-family: 'comforter brush', sans-serif;
 }
+
 /*assign animation to span tag*/
 span{
     display: inline-block;
     font-weight: bolder;
     animation: mover 6s linear infinite;
 }
+
 /*Add translate and create glowing effect with text shadow*/
 @keyframes mover {
     0%{
@@ -33,13 +62,14 @@ span{
     }
     50%{
         text-shadow: 0 0 60px ;
-        color:#B6B6B6 ;
+        color:#F5F5F5 ;
         /*transform: translate(2em);*/
     }
     100%{
         text-shadow: 0 0 0;
     }
 }
+
 /*delay each letter by .5 s */
 span:nth-child(1){
     animation-delay: 0.5s;
