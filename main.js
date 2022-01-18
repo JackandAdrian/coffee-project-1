@@ -118,7 +118,7 @@ submitNewCoffees.addEventListener('click', addingCoffee);
 submitButton.addEventListener('change', updateCoffees);
 
 // -------------music player-------------
-var music= document.getElementById("music");
+var music= document.getElementById("music").loop;
 var icon= document.getElementById("icon");
 
 var iconplay = function() {
