@@ -85,16 +85,11 @@ tbody.innerHTML = renderCoffees(coffees.reverse());
 var coffeeInput = document.getElementById("search");
 
 coffeeInput.addEventListener('keyup', function () {
-    var search = coffeeInput.value; //this stores the called coffeeInput variable's contents
+    var search = coffeeInput.value;
 
-    // stores filtered coffees array and returns the coffee by name or roast array values
     var searchFilter = coffees.filter(coffee => {
-        return coffee.name.includes(search) || coffee.roast.includes(search);
-    }); //
-
-    // var searchFilter = coffees.filter(function (coffee) {
-    //     return coffee.name.includes(search) || coffee.roast.includes(search);
-    // }) <---/// same function but in standard form.///
+        return coffee.name.toLowerCase().includes(search.toLowerCase()) || coffee.roast.toLowerCase().includes(search.toLowerCase());
+    });
     tbody.innerHTML = renderCoffees(searchFilter);
 })
 
