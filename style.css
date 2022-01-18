@@ -7,7 +7,6 @@
 /*    border: 1px solid black;*/
 /*    padding: 5px 10px;*/
 /*}*/
-
 .headline {
     height: 200px;
     opacity: 0.90;
@@ -16,3 +15,50 @@
     background-repeat:no-repeat;
     background-attachment: fixed;
 }
+/*--------------------Animated Logo---------------------------*/
+.title {
+    font-size: 100px;
+    font-family: comforter brush;
+}
+/*assign animation to span tag*/
+span{
+    display: inline-block;
+    font-weight: bolder;
+    animation: mover 6s linear infinite;
+}
+/*Add translate and create glowing effect with text shadow*/
+@keyframes mover {
+    0%{
+        text-shadow: 0 0 0  ;
+    }
+    50%{
+        text-shadow: 0 0 60px ;
+        color:#B6B6B6 ;
+        /*transform: translate(2em);*/
+    }
+    100%{
+        text-shadow: 0 0 0;
+    }
+}
+/*delay each letter by .5 s */
+span:nth-child(1){
+    animation-delay: 0.5s;
+
+}
+span:nth-child(2){
+    animation-delay: 1s;
+}
+span:nth-child(3){
+    animation-delay: 1.5s;
+}
+span:nth-child(4){
+    animation-delay: 2s;
+}
+span:nth-child(5){
+    animation-delay: 2.5s;
+}
+span:nth-child(6){
+    animation-delay: 3s;
+
+}
+
