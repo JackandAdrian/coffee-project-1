@@ -116,3 +116,16 @@ let submitNewCoffees = document.getElementById("submitNew");
 
 submitNewCoffees.addEventListener('click', addingCoffee);
 submitButton.addEventListener('change', updateCoffees);
+
+// -------------music player-------------
+var music= document.getElementById("music");
+var icon= document.getElementById("icon");
+
+var iconplay = function() {
+    if (music.paused){
+        music.play();
+        icon.src ="/files/pause.png"
+    }else {
+        music.pause();
+        icon.src = "/files/play.png"
+    }};

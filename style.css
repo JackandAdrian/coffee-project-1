@@ -92,3 +92,8 @@ span:nth-child(6){
 
 }
 
+/*-----------music player---------------*/
+#icon{
+    width: 50px;
+    cursor: pointer;
+}
