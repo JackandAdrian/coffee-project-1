@@ -17,9 +17,9 @@
 
 <body>
 
-    <div class="container">
-        <div class="headline">
-            <h1 style="text-align: center; color: gainsboro" class="title p-5">Coffee!</h1>
+    <div class="container shadow-lg p-2 mb-5 bg-white rounded">
+        <div class="headline p-5 mb-4 bg-light rounded-3">
+            <h1 style="text-align: center; color: gainsboro" class="title">Coffee!</h1>
         </div>
         <hr> <!-- moved div and hr out of row to separate from content body-->
 
@@ -33,6 +33,7 @@
 
             <!--Roast selection and user text-input container-->
             <div class="col-md-6">
+                <h2 class="mt-4" style="text-align:center">Find a Coffee</h2>
                 <form>
                     <label for="roast-selection"><h5>Roast</h5></label>
                     <select class="roast-option form-select mb-3" id="roast-selection">
@@ -62,8 +63,8 @@
                     <label for="roast-selection"><h5>Name</h5></label>
                     <input class="col-12 mb-3 form-control"
                            type="text"
-                           id="Entry">
-                    <button id="addition" type="submit" class="col-12 mb-2 btn btn-primary btn-lg btn-block shadow">Submit</button>
+                           id="submitCoffee">
+                    <button id="submitNew" type="submit" class="col-12 mb-2 btn btn-primary btn-lg btn-block shadow" value="submit">Submit</button>
                 </form>
 
             </div> <!-- column end-->
