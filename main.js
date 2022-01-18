@@ -82,36 +82,36 @@ tbody.innerHTML = renderCoffees(coffees.reverse());
 
 
 // FILTER COFFEE NAMES AS USER INPUT TO SEARCH BAR...
-var coffeeInput = document.getElementById("search");
+let coffeeInput = document.getElementById("search");
 
 coffeeInput.addEventListener('keyup', function () {
-    var search = coffeeInput.value;
+    let search = coffeeInput.value;
 
-    var searchFilter = coffees.filter(coffee => {
+    let searchFilter = coffees.filter(coffee => {
         return coffee.name.toLowerCase().includes(search.toLowerCase()) || coffee.roast.toLowerCase().includes(search.toLowerCase());
     });
     tbody.innerHTML = renderCoffees(searchFilter);
 })
 
 // ADDING A NEW COFFEE...
-const addingCoffee = (e) => {
+let addingCoffee = (e) => {
 
     e.preventDefault();
 
-    const selectedRoast = newRoastInput.value;
-    const coffeeName = newCoffee.value;
-    const coffeeID = coffees.length + 1;
+    let selectedRoast = newRoastInput.value;
+    let coffeeName = newCoffee.value;
+    let coffeeID = coffees.length + 1;
 
-    const coffeeToAdd = {id: coffeeID, name: coffeeName, roast: selectedRoast};
+    let coffeeToAdd = {id: coffeeID, name: coffeeName, roast: selectedRoast};
 
     coffees.push(coffeeToAdd);
 
     updateCoffees();
 }
 
-const newRoastInput = document.getElementById('new-roast-selection');
-const newCoffee = document.getElementById('submitCoffee');
-const submitNewCoffees = document.getElementById("submitNew");
+let newRoastInput = document.getElementById('new-roast-selection');
+let newCoffee = document.getElementById('submitCoffee');
+let submitNewCoffees = document.getElementById("submitNew");
 
 
 submitNewCoffees.addEventListener('click', addingCoffee);
